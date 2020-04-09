@@ -1,14 +1,24 @@
+@import url("./politicians.css");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
 /*Typography
 --------------------------------------------------------------*/
+
 body,
 button,
 input,
 select,
 textarea {
-	color: #404040;
-	font-family: "Open Sans", sans-serif;
-	font-size: 14px;
-	line-height: 1.5;
+    color: #404040;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.italic {
+    font-style: italic;
 }
