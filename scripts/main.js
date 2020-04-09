@@ -6,8 +6,8 @@ import { ShowPacList } from "./pacs/PacList.js";
 import { getPacs } from "./pacs/pacProvider.js";
 
 getPoliticians()
-    .then(ShowPoliticianList)
-getCorporations()
-    .then(ShowCorporationList)
+    .then(getCorporations)
     .then(getPacs)
+    .then(ShowPoliticianList)
+    .then(ShowCorporationList)
     .then(ShowPacList)

@@ -1,7 +1,4 @@
-//format number to USD
-const numToDollars = (num) => {
-    return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(num)
-}
+import { numToDollars } from "../utilities.js"
 
 export const Pac = (pacObject, corporateDonationArray) => {
         return `

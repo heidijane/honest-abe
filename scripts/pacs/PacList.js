@@ -21,7 +21,8 @@ const render = () => {
             //add the donation amount to the contributor array we are passing to the Pac function
             contributor.donationAmount = donation.amount
 
-            return contributor
+            //return a new object that is a combination of the corporation info and the donation amount
+            return {...contributor, ... { "donationAmount": donation.amount } }
         })
 
         //convert the single PAC and its corporate donations into an HTML representation
