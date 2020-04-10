@@ -15,7 +15,6 @@ const render = () => {
     const politicians = usePoliticians()
     const pacs = usePacs()
     const bills = useBills()
-    const interests = useInterests()
     const corporations = useCorporations()
     const corporationInterests = useCorporationInterests()
 

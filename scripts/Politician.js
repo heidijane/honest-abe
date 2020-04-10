@@ -1,5 +1,3 @@
-import { numToDollars } from "./utilities.js"
-
 export const Politician = (politicianObject, legislationArray, pacDonationArray, influencingCorporationArray) => {
         return `
         <div class="politician">
