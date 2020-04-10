@@ -1,6 +1,6 @@
 import { numToDollars } from "./utilities.js"
 
-export const Politician = (politicianObject, legislationArray, pacDonationArray) => {
+export const Politician = (politicianObject, legislationArray, pacDonationArray, influencingCorporationArray) => {
         return `
         <div class="politician">
             <h3>${politicianObject.name.first} ${politicianObject.name.last}</h3>
@@ -14,6 +14,11 @@ export const Politician = (politicianObject, legislationArray, pacDonationArray)
             <p><span class="bold">Related PACs</span>
                 <ul>
                     ${pacDonationArray.length !== 0 ? pacDonationArray.map(donation => `<li>${donation.registeredName}</li>`).join('') : `None`}
+                </ul>
+            </p>
+            <p><span class="bold">Influencing Corporations</span>
+                <ul>
+                    ${influencingCorporationArray.length !== 0 ? influencingCorporationArray.map(corp => `<li>${corp.company}</li>`).join('') : `None`}
                 </ul>
             </p>
         </div>
