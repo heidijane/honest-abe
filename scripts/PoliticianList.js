@@ -1,6 +1,7 @@
 import { usePoliticians } from "./politicianProvider.js"
 import { Politician } from "./Politician.js"
 import { usePacs } from "./pacs/pacProvider.js"
+import { useBills } from "./legislation/billProvider.js"
 
 const contentTarget = document.querySelector("#politicianList")
 
@@ -11,24 +12,24 @@ export const ShowPoliticianList = () => {
 const render = () => {
     const politicians = usePoliticians()
     const pacs = usePacs()
+    const bills = useBills()
 
     contentTarget.innerHTML = politicians.map(politician => {
+
+        //get the politician's sponsored bills
+        const sponsoredBills = politician.politicianlegislations.map(rel => {
+            const billData = bills.find(bill => bill.id === rel.legislationId)
+            return billData
+        })
+
 
         //match the pac object to the pac/politician donation relationship
         const pacContributors = politician.pacdonations.map(donation => {
 
-            const contributor = pacs.find((pac) => {
-                if (pac.id === donation.pacId) {
-
-                    return true
-                }
-                return false
-            })
-
-            //return a new object that is a combination of the pac info and the donation amount
-            return {...contributor, ... { "donationAmount": donation.amount } }
+            const contributor = pacs.find(pac => pac.id === donation.pacId)
+            return contributor
         })
 
-        return Politician(politician, pacContributors)
+        return Politician(politician, sponsoredBills, pacContributors)
     }).join('')
 }
