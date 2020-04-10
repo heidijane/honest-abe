@@ -1,7 +1,7 @@
 let interests = []
 
 export const getInterests = () => {
-    return fetch("http://localhost:3000/interests?_embed=corporateinterests")
+    return fetch("http://localhost:3000/interests")
         .then(response => response.json())
         .then(response => interests = response)
 }
