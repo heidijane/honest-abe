@@ -5,14 +5,11 @@ import { ShowCorporationList } from "./corporations/CorporationList.js";
 import { ShowPacList } from "./pacs/PacList.js";
 import { getPacs } from "./pacs/pacProvider.js";
 import { getBills } from "./legislation/billProvider.js";
-import { getInterests } from "./legislation/interestProvider.js";
-
 
 const promises = [
     getPoliticians(),
     getCorporations(),
     getPacs(),
-    getInterests(),
     getBills(),
     getCorporationInterests()
 ]

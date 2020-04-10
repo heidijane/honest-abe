@@ -11,7 +11,7 @@ export const useCorporations = () => corporations.slice()
 let corporationInterests = []
 
 export const getCorporationInterests = () => {
-    return fetch("http://localhost:3000/corporateinterests")
+    return fetch("http://localhost:3000/corporateinterests?_expand=interest")
         .then(response => response.json())
         .then(response => corporationInterests = response)
 }

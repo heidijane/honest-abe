@@ -6,12 +6,12 @@ export const Politician = (politicianObject, legislationArray, pacDonationArray,
             <p><span class="bold">Represents</span> ${politicianObject.district}</p>
             <p><span class="bold">Sponsored Legislation</span>
                 <ul>
-                    ${legislationArray.length !== 0 ? legislationArray.map(bill => `<li>${bill.name}</li>`).join('') : `None`}
+                    ${legislationArray.length !== 0 ? legislationArray.map(bill => `<li>${bill.name} (${bill.interest.about})</li>`).join('') : `None`}
                 </ul>
             </p>
             <p><span class="bold">Related PACs</span>
                 <ul>
-                    ${pacDonationArray.length !== 0 ? pacDonationArray.map(donation => `<li>${donation.registeredName}</li>`).join('') : `None`}
+                    ${pacDonationArray.length !== 0 ? pacDonationArray.map(donation => `<li>${donation.registeredName} PAC</li>`).join('') : `None`}
                 </ul>
             </p>
             <p><span class="bold">Influencing Corporations</span>

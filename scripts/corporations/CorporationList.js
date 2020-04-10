@@ -1,4 +1,4 @@
-import { useCorporations } from "./corporationProvider.js"
+import { useCorporations, useCorporationInterests } from "./corporationProvider.js"
 import { Corporation } from "./Corporation.js"
 
 const contentTarget = document.querySelector("#corporationList")
@@ -9,8 +9,12 @@ export const ShowCorporationList = () => {
 
 const render = () => {
     const corporations = useCorporations()
+    const corpInterests = useCorporationInterests()
 
     contentTarget.innerHTML = corporations.map(corporation => {
-        return Corporation(corporation)
+
+        const interests = corpInterests.filter(rel => rel.corporationId === corporation.id)
+
+        return Corporation(corporation, interests)
     }).join('')
 }

@@ -2,7 +2,6 @@ import { usePoliticians } from "./politicianProvider.js"
 import { Politician } from "./Politician.js"
 import { usePacs } from "./pacs/pacProvider.js"
 import { useBills } from "./legislation/billProvider.js"
-import { useInterests } from "./legislation/interestProvider.js"
 import { useCorporations, useCorporationInterests } from "./corporations/corporationProvider.js"
 
 const contentTarget = document.querySelector("#politicianList")
@@ -70,6 +69,8 @@ const render = () => {
                 return true
             }
         })
+
+        console.log(sponsoredBills)
 
         return Politician(politician, sponsoredBills, pacContributors, influencingCorporations)
     }).join('')
